@@ -1,6 +1,8 @@
 import { useCallback, useMemo } from "react";
 
 import heroBg from "@/assets/hero-bg.jpg";
+import banner2 from "@/assets/banner-2.jpg";
+import banner3 from "@/assets/banner-3.jpg";
 import caseRetail from "@/assets/case-retail.jpg";
 import caseMedia from "@/assets/case-media.jpg";
 import caseManufacturing from "@/assets/case-manufacturing.jpg";
@@ -12,6 +14,21 @@ import wechatQr from "@/assets/wechat-qr.jpg";
  */
 
 export type ProductCategory = "compute" | "database" | "storage" | "network";
+
+/**
+ * Banner 轮播项。
+ * `image_url` 后续可替换为上传接口返回的图片地址（如 /api/banners）。
+ * 文案字段留空时自动回退到 settings 中的默认 Hero 文案。
+ */
+export interface HeroBanner {
+  id: string;
+  image_url: string;
+  alt: string;
+  eyebrow?: string;
+  title?: string;
+  highlight?: string;
+  subtitle?: string;
+}
 
 export interface SiteSettings {
   brand: string;
