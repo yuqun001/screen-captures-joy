@@ -66,7 +66,7 @@ export function HeroSection({ settings }: { settings: SiteSettings }) {
             {settings.partner_label}
           </span>
 
-          <div key={current.id} className="max-w-3xl animate-fade-in">
+          <div key={current.id} className="max-w-3xl animate-rise-in">
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-secondary">
               {eyebrow}
             </p>
