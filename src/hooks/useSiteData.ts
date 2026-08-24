@@ -43,6 +43,7 @@ export interface SiteSettings {
   primary_cta: string;
   secondary_cta: string;
   stats: { value: string; label: string }[];
+  banners: HeroBanner[];
 }
 
 export interface NavItem {
