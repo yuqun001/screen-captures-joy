@@ -83,29 +83,44 @@ export function AiSection({ aiCards, gpuCards }: Props) {
               return (
                 <article
                   key={card.id}
-                  className="group relative overflow-hidden rounded-2xl border border-border bg-background/60 p-6 transition-all duration-300 hover:border-primary/50"
+                  style={{ animationDelay: `${i * 120}ms` }}
+                  className="group animate-rise-in relative isolate overflow-hidden rounded-2xl border border-border bg-background/60 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow"
                 >
-                  <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-primary/15 blur-2xl transition-opacity duration-300 group-hover:opacity-100 opacity-0" />
+                  {/* 动态光斑与网格背景 */}
+                  <div className="animate-float-soft absolute -right-12 -top-12 -z-10 h-32 w-32 rounded-full bg-primary/20 blur-3xl" />
+                  <div className="animate-float-soft absolute -bottom-14 -left-10 -z-10 h-28 w-28 rounded-full bg-secondary/15 blur-3xl [animation-delay:1.8s]" />
+                  <div className="grid-backdrop absolute inset-0 -z-10 opacity-[0.12] transition-opacity duration-500 group-hover:opacity-25" />
+                  {/* 扫描光线 */}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-16 bg-gradient-to-b from-secondary/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:animate-scan-line group-hover:opacity-100" />
+                  {/* 顶部流光 */}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden">
+                    <div className="animate-shimmer-x h-px w-1/2 bg-gradient-signal" />
+                  </div>
+
                   {card.image_url ? (
                     <img
                       src={card.image_url}
                       alt={card.scenario}
                       loading="lazy"
-                      className="mb-4 h-32 w-full rounded-xl object-cover"
+                      className="mb-4 h-32 w-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   ) : null}
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-primary-foreground">
-                    <Icon className="h-5 w-5" />
+
+                  <span className="relative grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
+                    <span className="animate-pulse-ring absolute inset-0 rounded-xl border border-primary/60" />
+                    <span className="animate-orbit-spin absolute -inset-2 rounded-full border border-dashed border-secondary/30" />
+                    <Icon className="relative h-5 w-5" />
                   </span>
                   <h4 className="mt-4 text-base font-semibold">{card.scenario}</h4>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {card.description}
                   </p>
                   <ul className="mt-4 flex flex-wrap gap-1.5">
-                    {card.capabilities.map((cap) => (
+                    {card.capabilities.map((cap, capIndex) => (
                       <li
                         key={cap}
-                        className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-[0.72rem] text-muted-foreground"
+                        style={{ transitionDelay: `${capIndex * 70}ms` }}
+                        className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-[0.72rem] text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-secondary/50 group-hover:text-foreground"
                       >
                         <Layers className="h-3 w-3 text-secondary" />
                         {cap}

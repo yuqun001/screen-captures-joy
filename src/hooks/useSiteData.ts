@@ -1,6 +1,8 @@
 import { useCallback, useMemo } from "react";
 
 import heroBg from "@/assets/hero-bg.jpg";
+import banner2 from "@/assets/banner-2.jpg";
+import banner3 from "@/assets/banner-3.jpg";
 import caseRetail from "@/assets/case-retail.jpg";
 import caseMedia from "@/assets/case-media.jpg";
 import caseManufacturing from "@/assets/case-manufacturing.jpg";
@@ -12,6 +14,21 @@ import wechatQr from "@/assets/wechat-qr.jpg";
  */
 
 export type ProductCategory = "compute" | "database" | "storage" | "network";
+
+/**
+ * Banner 轮播项。
+ * `image_url` 后续可替换为上传接口返回的图片地址（如 /api/banners）。
+ * 文案字段留空时自动回退到 settings 中的默认 Hero 文案。
+ */
+export interface HeroBanner {
+  id: string;
+  image_url: string;
+  alt: string;
+  eyebrow?: string;
+  title?: string;
+  highlight?: string;
+  subtitle?: string;
+}
 
 export interface SiteSettings {
   brand: string;
@@ -26,6 +43,7 @@ export interface SiteSettings {
   primary_cta: string;
   secondary_cta: string;
   stats: { value: string; label: string }[];
+  banners: HeroBanner[];
 }
 
 export interface NavItem {
@@ -115,6 +133,34 @@ const settings: SiteSettings = {
     { value: "金牌", label: "官方合作伙伴等级" },
     { value: "28", label: "全球部署地域" },
     { value: "99.995%", label: "可用性保障" },
+  ],
+  // 轮播 banner：后续接入上传功能时，只需替换这个数组的来源
+  banners: [
+    {
+      id: "banner-1",
+      image_url: heroBg,
+      alt: "云数据中心与全球网络示意",
+    },
+    {
+      id: "banner-2",
+      image_url: banner2,
+      alt: "云网络高速链路示意",
+      eyebrow: "架构咨询 · 平滑割接 · 成本优化",
+      title: "核心系统迁云",
+      highlight: "零停机割接",
+      subtitle:
+        "资深云架构师全程护航，从评估、演练到割接上线，保障业务连续性与成本可控。",
+    },
+    {
+      id: "banner-3",
+      image_url: banner3,
+      alt: "GPU 集群与 AI 算力示意",
+      eyebrow: "通义千问 · PAI · 专属 GPU",
+      title: "AI 算力交付",
+      highlight: "数天上线",
+      subtitle:
+        "RDMA 高速互联的专属 GPU 资源池，配套并行文件存储与推理服务，快速跑通业务场景。",
+    },
   ],
 };
 
