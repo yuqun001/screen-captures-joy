@@ -8,9 +8,9 @@ export function CasesSection({ cases }: { cases: CaseStudy[] }) {
     <section id="cases" className="border-t border-border py-24 lg:py-32">
       <div className="section-shell">
         <SectionHeading
-          eyebrow="Case Studies"
-          title="Outcomes our clients can put in a board deck"
-          description="A selection of enterprise migrations and AI build-outs delivered with our Alibaba Cloud Gold Partner team."
+          eyebrow="客户案例"
+          title="能写进董事会汇报的落地成果"
+          description="以下是我们金牌伙伴团队交付的部分企业上云迁移与 AI 平台建设项目。"
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -63,7 +63,7 @@ export function CasesSection({ cases }: { cases: CaseStudy[] }) {
                   href="#contact"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                 >
-                  Read the full story
+                  查看完整案例
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>

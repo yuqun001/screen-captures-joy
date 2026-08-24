@@ -22,14 +22,14 @@ export function SiteFooter({ settings, nav, contactInfo }: Props) {
             <span className="font-display text-base font-semibold">{settings.brand_en}</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {settings.partner_label}. Cloud migration, managed infrastructure, AI platforms and GPU
-            compute for enterprises across Asia-Pacific.
+            {settings.partner_label}，为亚太地区企业提供上云迁移、云基础设施托管运维、AI
+            平台建设与 GPU 算力服务。
           </p>
         </div>
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">
-            Quick Links
+            快速导航
           </h3>
           <ul className="mt-4 space-y-2.5">
             {nav.map((item) => (
@@ -47,7 +47,7 @@ export function SiteFooter({ settings, nav, contactInfo }: Props) {
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">
-            Get in Touch
+            联系方式
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
             <li>{contactInfo.address}</li>
@@ -60,12 +60,12 @@ export function SiteFooter({ settings, nav, contactInfo }: Props) {
       <div className="border-t border-border">
         <div className="section-shell flex flex-col gap-2 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {settings.brand_en}. All rights reserved.
+            © {year} {settings.brand_en}. 保留所有权利。
           </p>
           <p className="flex flex-wrap gap-x-4 gap-y-1">
-            <span>ICP License: 浙B2-20260088</span>
-            <span>ISO 27001 · ISO 20000 certified</span>
-            <span>Privacy · Terms</span>
+            <span>ICP 备案：浙B2-20260088</span>
+            <span>ISO 27001 · ISO 20000 认证</span>
+            <span>隐私政策 · 服务条款</span>
           </p>
         </div>
       </div>

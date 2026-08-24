@@ -42,7 +42,7 @@ export function SiteHeader({ settings, nav }: Props) {
               {settings.brand}
             </span>
             <span className="text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
-              Cloud Partner
+              阿里云金牌伙伴
             </span>
           </span>
         </a>
@@ -61,13 +61,13 @@ export function SiteHeader({ settings, nav }: Props) {
 
         <div className="flex items-center gap-2">
           <Button variant="hero" size="lg" className="hidden sm:inline-flex" asChild>
-            <a href="#contact">Get a Cloud Assessment</a>
+            <a href="#contact">免费上云评估</a>
           </Button>
           <Button
             variant="glass"
             size="icon"
             className="lg:hidden"
-            aria-label="Toggle navigation"
+            aria-label="展开导航菜单"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X /> : <Menu />}
@@ -91,7 +91,7 @@ export function SiteHeader({ settings, nav }: Props) {
           </nav>
           <Button variant="hero" size="lg" className="mt-4 w-full" asChild>
             <a href="#contact" onClick={() => setOpen(false)}>
-              Get a Cloud Assessment
+              免费上云评估
             </a>
           </Button>
         </div>
