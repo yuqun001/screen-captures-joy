@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from "react";
 
-import heroBg from "@/assets/hero-bg.jpg";
-import banner2 from "@/assets/banner-2.jpg";
-import banner3 from "@/assets/banner-3.jpg";
+import heroBg from "@/assets/banner-light-1.jpg";
+import banner2 from "@/assets/banner-light-2.jpg";
+import banner3 from "@/assets/banner-light-3.jpg";
 import caseRetail from "@/assets/case-retail.jpg";
 import caseMedia from "@/assets/case-media.jpg";
 import caseManufacturing from "@/assets/case-manufacturing.jpg";

@@ -51,13 +51,14 @@ export function HeroSection({ settings }: { settings: SiteSettings }) {
           width={1920}
           height={1088}
           loading={index === 0 ? "eager" : "lazy"}
-          className={`absolute inset-0 -z-20 h-full w-full object-cover transition-[opacity,transform] duration-[1400ms] ease-out ${
-            index === active ? "scale-100 opacity-70" : "scale-105 opacity-0"
+          className={`absolute inset-0 -z-20 h-full w-full object-cover object-right transition-[opacity,transform] duration-[1400ms] ease-out ${
+            index === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
           }`}
         />
       ))}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(120%_90%_at_50%_-10%,transparent,var(--background)_78%)]" />
-      <div className="grid-backdrop absolute inset-0 -z-10 opacity-40 [mask-image:radial-gradient(70%_60%_at_50%_20%,black,transparent)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,var(--background)_0%,color-mix(in_oklab,var(--background)_88%,transparent)_42%,transparent_72%)]" />
+      <div className="grid-backdrop absolute inset-0 -z-10 opacity-50 [mask-image:radial-gradient(70%_60%_at_20%_20%,black,transparent)]" />
+
 
       <div className="section-shell">
         <div className="flex flex-col items-start gap-8">
