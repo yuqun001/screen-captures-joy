@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Button } from "@/components/ui/button";
 import type { AiCard, GpuCard } from "@/hooks/useSiteData";
 
-const GPU_ICONS = [Bot, Film, Clapperboard, Cpu];
+const GPU_ICONS = [Bot, Film, Clapperboard, Cpu] as const;
 
 interface Props {
   aiCards: AiCard[];
@@ -79,7 +79,7 @@ export function AiSection({ aiCards, gpuCards }: Props) {
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {gpuCards.map((card, i) => {
-              const Icon = GPU_ICONS[i % GPU_ICONS.length];
+              const Icon = GPU_ICONS[i % GPU_ICONS.length]!;
               return (
                 <article
                   key={card.id}
