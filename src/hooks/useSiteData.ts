@@ -7,8 +7,8 @@ import caseManufacturing from "@/assets/case-manufacturing.jpg";
 import wechatQr from "@/assets/wechat-qr.jpg";
 
 /**
- * Central mock data layer.
- * Swap the `data` object below for API responses (shapes are backend-ready).
+ * 统一的数据层（当前为模拟数据）。
+ * 后续可直接把 `data` 替换为接口返回，字段结构与后端保持一致。
  */
 
 export type ProductCategory = "compute" | "database" | "storage" | "network";
@@ -90,240 +90,225 @@ export interface LeadPayload {
 }
 
 const CATEGORY_LABELS: { id: "all" | ProductCategory; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "compute", label: "Compute" },
-  { id: "database", label: "Database" },
-  { id: "storage", label: "Storage" },
-  { id: "network", label: "Network" },
+  { id: "all", label: "全部" },
+  { id: "compute", label: "计算" },
+  { id: "database", label: "数据库" },
+  { id: "storage", label: "存储" },
+  { id: "network", label: "网络与安全" },
 ];
 
 const settings: SiteSettings = {
-  brand: "Nimbus Gold",
-  brand_en: "Nimbus Gold Cloud",
+  brand: "金云智算",
+  brand_en: "金云智算 · 云服务",
   logo_url: null as unknown as string,
   hero_bg_url: heroBg,
-  partner_label: "Alibaba Cloud Official Gold Partner",
-  hero_eyebrow: "Migration · Infrastructure · AI Compute",
-  hero_title: "Enterprise Cloud",
-  hero_highlight: "First Choice",
+  partner_label: "阿里云官方金牌合作伙伴",
+  hero_eyebrow: "上云迁移 · 云基础设施 · AI 算力",
+  hero_title: "企业上云",
+  hero_highlight: "首选伙伴",
   hero_subtitle:
-    "We architect, migrate and operate mission-critical workloads on Alibaba Cloud — from elastic compute and managed databases to Qwen-powered AI platforms and dedicated GPU clusters.",
-  primary_cta: "Talk to a Cloud Architect",
-  secondary_cta: "Explore Cloud Products",
+    "我们为核心业务系统提供架构设计、平滑迁移与 7×24 运维——覆盖弹性计算、托管数据库，到通义千问 AI 平台与专属 GPU 集群。",
+  primary_cta: "免费咨询云架构师",
+  secondary_cta: "浏览云产品",
   stats: [
-    { value: "2500+", label: "Enterprise clients" },
-    { value: "Gold", label: "Official partner tier" },
-    { value: "28", label: "Global regions deployed" },
-    { value: "99.995%", label: "Availability delivered" },
+    { value: "2500+", label: "企业客户" },
+    { value: "金牌", label: "官方合作伙伴等级" },
+    { value: "28", label: "全球部署地域" },
+    { value: "99.995%", label: "可用性保障" },
   ],
 };
 
 const nav: NavItem[] = [
-  { label: "Home", href: "#home" },
-  { label: "Cloud Products", href: "#products" },
-  { label: "AI Solutions", href: "#ai" },
-  { label: "Case Studies", href: "#cases" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "首页", href: "#home" },
+  { label: "云产品", href: "#products" },
+  { label: "AI 解决方案", href: "#ai" },
+  { label: "客户案例", href: "#cases" },
+  { label: "联系我们", href: "#contact" },
 ];
 
 const products: Product[] = [
   {
     id: "ecs",
     category: "compute",
-    title: "Elastic Compute Service",
-    subtitle: "ECS",
-    description:
-      "Production-grade virtual machines with instant scaling, live migration and per-workload instance families.",
+    title: "云服务器 ECS",
+    subtitle: "Elastic Compute Service",
+    description: "生产级云主机，支持秒级扩容、热迁移与按业务匹配的多种实例规格族。",
     icon_url: null,
     image_url: null,
-    features: ["8th-gen instance families", "Auto scaling groups", "Live migration, zero downtime"],
-    tags: ["Hot"],
+    features: ["第八代实例规格族", "弹性伸缩伸缩组", "热迁移、业务零中断"],
+    tags: ["热门"],
   },
   {
     id: "k8s",
     category: "compute",
-    title: "Container Service for Kubernetes",
-    subtitle: "ACK",
-    description:
-      "Managed Kubernetes with hardened control planes, service mesh and GPU-aware scheduling built in.",
+    title: "容器服务 ACK",
+    subtitle: "Kubernetes 托管版",
+    description: "托管 Kubernetes 控制面，内置服务网格与 GPU 感知调度，开箱即用的安全加固。",
     icon_url: null,
     image_url: null,
-    features: ["Managed control plane", "Serverless node pools", "GPU scheduling"],
-    tags: ["Popular"],
+    features: ["托管控制面", "Serverless 节点池", "GPU 调度能力"],
+    tags: ["推荐"],
   },
   {
     id: "serverless",
     category: "compute",
-    title: "Function Compute",
-    subtitle: "FC",
-    description:
-      "Event-driven serverless runtime for bursty traffic, media pipelines and inference gateways.",
+    title: "函数计算 FC",
+    subtitle: "Serverless 运行时",
+    description: "事件驱动的无服务器算力，适合流量突发、音视频处理与推理网关场景。",
     icon_url: null,
     image_url: null,
-    features: ["Millisecond billing", "Native event sources", "Cold-start optimization"],
-    tags: ["New"],
+    features: ["毫秒级计费", "原生事件源接入", "冷启动优化"],
+    tags: ["新品"],
   },
   {
     id: "rds",
     category: "database",
-    title: "ApsaraDB RDS",
+    title: "云数据库 RDS",
     subtitle: "MySQL · PostgreSQL",
-    description:
-      "Fully managed relational databases with automated failover, PITR backups and read-replica fan-out.",
+    description: "全托管关系型数据库，自动主备切换、任意时间点恢复与只读实例横向扩展。",
     icon_url: null,
     image_url: null,
-    features: ["Cross-zone HA", "Point-in-time recovery", "Read replicas"],
-    tags: ["Hot"],
+    features: ["跨可用区高可用", "任意时间点恢复", "只读实例扩展"],
+    tags: ["热门"],
   },
   {
     id: "polardb",
     category: "database",
-    title: "PolarDB Cloud-Native",
-    subtitle: "Distributed SQL",
-    description:
-      "Compute-storage separated database scaling to 100 TB with second-level elastic read capacity.",
+    title: "云原生数据库 PolarDB",
+    subtitle: "分布式关系型",
+    description: "存算分离架构，单集群可扩展至 100TB，读能力支持秒级弹性伸缩。",
     icon_url: null,
     image_url: null,
-    features: ["100 TB single cluster", "Second-level scaling", "MySQL compatible"],
-    tags: ["Flagship"],
+    features: ["单集群 100TB", "秒级弹性扩容", "兼容 MySQL 生态"],
+    tags: ["旗舰"],
   },
   {
     id: "redis",
     category: "database",
-    title: "Tair In-Memory",
-    subtitle: "Redis compatible",
-    description:
-      "Ultra-low latency caching and session store with persistent memory and cluster sharding.",
+    title: "内存数据库 Tair",
+    subtitle: "兼容 Redis",
+    description: "超低延迟缓存与会话存储，支持持久内存型与集群分片架构。",
     icon_url: null,
     image_url: null,
-    features: ["Sub-millisecond reads", "Persistent memory tier", "Proxy-based sharding"],
+    features: ["亚毫秒级读取", "持久内存型", "代理模式分片"],
     tags: [],
   },
   {
     id: "oss",
     category: "storage",
-    title: "Object Storage Service",
-    subtitle: "OSS",
-    description:
-      "Exabyte-scale object storage with lifecycle tiering, versioning and edge acceleration.",
+    title: "对象存储 OSS",
+    subtitle: "海量非结构化存储",
+    description: "EB 级对象存储，支持生命周期分层、版本控制与传输加速。",
     icon_url: null,
     image_url: null,
-    features: ["11 nines durability", "Lifecycle tiering", "Transfer acceleration"],
-    tags: ["Hot"],
+    features: ["11 个 9 数据可靠性", "生命周期分层", "全球传输加速"],
+    tags: ["热门"],
   },
   {
     id: "nas",
     category: "storage",
-    title: "Apsara File Storage",
-    subtitle: "NAS · CPFS",
-    description:
-      "Shared POSIX file systems, including parallel CPFS volumes for training-scale throughput.",
+    title: "文件存储 NAS · CPFS",
+    subtitle: "共享文件系统",
+    description: "共享 POSIX 文件系统，并提供面向训练场景的高吞吐并行文件存储 CPFS。",
     icon_url: null,
     image_url: null,
-    features: ["Elastic capacity", "CPFS for AI training", "NFS & SMB protocols"],
+    features: ["容量弹性伸缩", "CPFS 支撑 AI 训练", "支持 NFS 与 SMB"],
     tags: [],
   },
   {
     id: "backup",
     category: "storage",
-    title: "Hybrid Backup Recovery",
-    subtitle: "HBR",
-    description:
-      "Unified backup for on-premises and cloud workloads with immutable, ransomware-resistant vaults.",
+    title: "混合云备份 HBR",
+    subtitle: "统一备份与恢复",
+    description: "统一备份本地与云上负载，提供防勒索的不可变备份库。",
     icon_url: null,
     image_url: null,
-    features: ["Immutable vaults", "Agentless VM backup", "Cross-region replicas"],
-    tags: ["New"],
+    features: ["不可变备份库", "无代理虚机备份", "跨地域副本"],
+    tags: ["新品"],
   },
   {
     id: "slb",
     category: "network",
-    title: "Server Load Balancer",
-    subtitle: "ALB · NLB",
-    description:
-      "Layer 4/7 load balancing with millions of concurrent connections and native TLS offload.",
+    title: "负载均衡 ALB · NLB",
+    subtitle: "四层 / 七层",
+    description: "四层与七层负载均衡，支持百万级并发连接与原生 TLS 卸载。",
     icon_url: null,
     image_url: null,
-    features: ["L4 & L7 routing", "TLS offload", "Health-aware failover"],
+    features: ["L4 与 L7 路由", "TLS 卸载", "健康检查自动摘除"],
     tags: [],
   },
   {
     id: "cen",
     category: "network",
-    title: "Cloud Enterprise Network",
-    subtitle: "CEN · Express Connect",
-    description:
-      "Private global backbone linking data centers, branches and VPCs with deterministic latency.",
+    title: "云企业网 CEN",
+    subtitle: "高速通道 · 专线",
+    description: "全球私有骨干网，打通数据中心、分支与 VPC，提供确定性低时延。",
     icon_url: null,
     image_url: null,
-    features: ["Global private backbone", "Hybrid VPN & leased line", "Intelligent routing"],
-    tags: ["Hot"],
+    features: ["全球私有骨干网", "VPN 与专线混合组网", "智能路由选路"],
+    tags: ["热门"],
   },
   {
     id: "waf",
     category: "network",
-    title: "Anti-DDoS & WAF",
-    subtitle: "Edge Security",
-    description:
-      "Terabit-scale scrubbing with managed WAF rulesets, bot management and API protection.",
+    title: "DDoS 高防 & WAF",
+    subtitle: "边缘安全防护",
+    description: "T 级清洗能力，托管 WAF 规则集、爬虫治理与 API 安全防护。",
     icon_url: null,
     image_url: null,
-    features: ["Tbps scrubbing", "Managed WAF rules", "Bot & API defense"],
-    tags: ["Secure"],
+    features: ["Tbps 级流量清洗", "托管 WAF 规则", "爬虫与 API 防护"],
+    tags: ["安全"],
   },
 ];
 
 const aiCards: AiCard[] = [
   {
     id: "qwen",
-    name: "Qwen",
-    family: "Large Language Model",
+    name: "通义千问 Qwen",
+    family: "大语言模型",
     description:
-      "Deploy the Qwen family for multilingual assistants, document intelligence and agentic workflows — private VPC endpoints, fine-tuning included.",
+      "在专有 VPC 内部署千问系列模型，构建多语言助手、文档智能与智能体工作流，包含微调服务。",
     icon_url: null,
     image_url: null,
     metrics: [
-      { label: "Context", value: "1M tokens" },
-      { label: "Modalities", value: "Text · Vision · Audio" },
+      { label: "上下文", value: "100 万 tokens" },
+      { label: "模态", value: "文本 · 视觉 · 语音" },
     ],
   },
   {
     id: "dashvector",
-    name: "DashVector",
-    family: "Vector Database",
-    description:
-      "Managed vector retrieval for RAG at enterprise scale, with hybrid search and millisecond recall over billions of embeddings.",
+    name: "DashVector 向量库",
+    family: "向量数据库",
+    description: "面向企业级 RAG 的托管向量检索，支持混合检索，百亿级向量毫秒级召回。",
     icon_url: null,
     image_url: null,
     metrics: [
-      { label: "Scale", value: "Billions of vectors" },
-      { label: "Recall", value: "< 10 ms p99" },
+      { label: "规模", value: "百亿级向量" },
+      { label: "召回", value: "p99 < 10 毫秒" },
     ],
   },
   {
     id: "pai",
-    name: "PAI",
-    family: "AI Platform",
-    description:
-      "End-to-end training and serving platform: distributed training, experiment tracking, model registry and elastic inference.",
+    name: "机器学习平台 PAI",
+    family: "AI 平台",
+    description: "端到端训练与推理平台：分布式训练、实验管理、模型仓库与弹性推理服务。",
     icon_url: null,
     image_url: null,
     metrics: [
-      { label: "Training", value: "Thousand-card jobs" },
-      { label: "Serving", value: "Elastic autoscale" },
+      { label: "训练", value: "千卡级任务" },
+      { label: "推理", value: "弹性自动扩缩" },
     ],
   },
   {
     id: "bailian",
-    name: "Model Studio",
-    family: "Agent & RAG Suite",
-    description:
-      "Assemble production agents on top of your own knowledge base with guardrails, evaluation and observability.",
+    name: "百炼模型服务",
+    family: "智能体与 RAG 套件",
+    description: "基于企业自有知识库搭建生产级智能体，内置安全护栏、效果评测与可观测能力。",
     icon_url: null,
     image_url: null,
     metrics: [
-      { label: "Connectors", value: "60+ data sources" },
-      { label: "Governance", value: "Audit & guardrails" },
+      { label: "连接器", value: "60+ 数据源" },
+      { label: "治理", value: "审计与护栏" },
     ],
   },
 ];
@@ -331,86 +316,82 @@ const aiCards: AiCard[] = [
 const gpuCards: GpuCard[] = [
   {
     id: "digital-human",
-    scenario: "AI Digital Human",
-    description:
-      "Real-time avatar rendering and lip-sync pipelines for livestream commerce, service desks and brand ambassadors.",
+    scenario: "AI 数字人",
+    description: "实时数字人渲染与口型同步链路，适用于直播电商、客服中心与品牌代言。",
     icon_url: null,
     image_url: null,
-    capabilities: ["Real-time inference", "Voice cloning", "Multi-stream rendering"],
+    capabilities: ["实时推理", "声音克隆", "多路并发渲染"],
   },
   {
     id: "animation",
-    scenario: "AI Animation",
-    description:
-      "Style-consistent frame generation and interpolation for studios producing episodic animated content.",
+    scenario: "AI 动画生成",
+    description: "风格一致的关键帧生成与补帧能力，助力动画团队规模化产出剧集内容。",
     icon_url: null,
     image_url: null,
-    capabilities: ["Style locking", "Frame interpolation", "Render farm bursting"],
+    capabilities: ["风格锁定", "智能补帧", "渲染集群弹性扩容"],
   },
   {
     id: "short-drama",
-    scenario: "AI Short Drama",
-    description:
-      "Script-to-storyboard-to-shot pipelines with batch video generation and automated post-production.",
+    scenario: "AI 短剧制作",
+    description: "从剧本到分镜到成片的批量视频生成链路，配套自动化后期处理。",
     icon_url: null,
     image_url: null,
-    capabilities: ["Batch video gen", "Auto subtitling", "Multi-language dubbing"],
+    capabilities: ["批量视频生成", "自动字幕", "多语种配音"],
   },
   {
     id: "training",
-    scenario: "Model Training Clusters",
-    description:
-      "Dedicated GPU pods with RDMA interconnect and parallel file storage for pre-training and fine-tuning.",
+    scenario: "模型训练集群",
+    description: "专属 GPU 资源池，配备 RDMA 高速互联与并行文件存储，支撑预训练与微调。",
     icon_url: null,
     image_url: null,
-    capabilities: ["RDMA fabric", "CPFS storage", "Checkpoint resilience"],
+    capabilities: ["RDMA 高速网络", "CPFS 并行存储", "断点续训"],
   },
 ];
 
 const cases: CaseStudy[] = [
   {
     id: "retail",
-    title: "Cross-border retail platform re-architected for peak season",
+    title: "跨境零售平台重构架构，稳定支撑大促洪峰",
     description:
-      "Migrated a monolithic commerce stack to ACK with PolarDB and OSS, absorbing 40x traffic spikes during global sale events.",
+      "将单体电商系统迁移至 ACK，结合 PolarDB 与 OSS，在全球大促期间平稳承接 40 倍流量峰值。",
     photo_url: caseRetail,
-    industry: ["Retail", "Cross-border"],
+    industry: ["零售", "跨境电商"],
     date: "2026-03",
-    achievements: ["40x peak traffic absorbed", "Latency −62%", "Zero downtime cutover"],
+    achievements: ["承接 40 倍峰值", "时延下降 62%", "零停机割接"],
   },
   {
     id: "media",
-    title: "Studio launches AI short-drama pipeline on dedicated GPUs",
+    title: "影视公司基于专属 GPU 上线 AI 短剧生产线",
     description:
-      "Built a GPU cluster and Qwen-based script pipeline that took a media group from concept to 120 published episodes.",
+      "搭建 GPU 集群与通义千问剧本链路，帮助传媒集团从概念验证走到 120 集内容上线发布。",
     photo_url: caseMedia,
-    industry: ["Media", "AIGC"],
+    industry: ["传媒", "AIGC"],
     date: "2026-01",
-    achievements: ["120 episodes shipped", "Production cost −55%", "9-day delivery cycle"],
+    achievements: ["上线 120 集内容", "制作成本降低 55%", "9 天交付周期"],
   },
   {
     id: "manufacturing",
-    title: "Smart factory unifies 14 plants on one cloud control plane",
+    title: "智能工厂将 14 个厂区统一到一套云管控平面",
     description:
-      "Hybrid CEN backbone plus IoT ingestion and RDS analytics gave a manufacturer real-time visibility across every line.",
+      "通过 CEN 混合组网、IoT 数据接入与 RDS 分析能力，制造企业实现全产线实时可视化。",
     photo_url: caseManufacturing,
-    industry: ["Manufacturing", "IoT"],
+    industry: ["制造", "工业物联网"],
     date: "2025-11",
-    achievements: ["14 plants connected", "Defect detection +31%", "Unplanned stops −44%"],
+    achievements: ["14 个厂区互联", "缺陷检出率 +31%", "非计划停机 −44%"],
   },
 ];
 
 const contactInfo: ContactInfo = {
-  address: "Tower B, 128 Yunqi Road, Xihu District, Hangzhou, China",
+  address: "浙江省杭州市西湖区云栖路 128 号 B 座",
   phone: "+86 400 820 6688",
   email: "cloud@nimbusgold.com",
-  hours: "Architects on call, 7×24",
+  hours: "架构师 7×24 小时随时响应",
   wechat_qr: wechatQr,
 };
 
 export function useSiteData() {
   const submitLead = useCallback(async (payload: LeadPayload) => {
-    // Mock async POST — replace with fetch("/api/leads", { method: "POST", ... })
+    // 模拟异步提交 —— 可替换为 fetch("/api/leads", { method: "POST", ... })
     await new Promise((resolve) => setTimeout(resolve, 1200));
     console.info("[mock POST /api/leads]", payload);
     return { ok: true as const, id: `lead_${Date.now()}` };

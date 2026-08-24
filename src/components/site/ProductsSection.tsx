@@ -40,9 +40,9 @@ export function ProductsSection({ products, categories }: Props) {
       <div className="section-shell">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="Cloud Products"
-            title="Infrastructure built for regulated, high-traffic enterprises"
-            description="Every service is deployed, hardened and monitored by our certified architects — no self-service guesswork."
+            eyebrow="云产品"
+            title="为高并发、强合规企业打造的云基础设施"
+            description="每一项服务都由我们的认证架构师完成部署、安全加固与全程监控，不必自行摸索。"
           />
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
@@ -116,7 +116,7 @@ export function ProductsSection({ products, categories }: Props) {
 
                 <Button variant="quiet" size="sm" className="w-full justify-between" asChild>
                   <a href="#contact">
-                    View Details
+                    查看详情
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </Button>

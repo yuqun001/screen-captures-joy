@@ -9,9 +9,9 @@ import { CasesSection } from "@/components/site/CasesSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
-const title = "Nimbus Gold Cloud | Enterprise Cloud & AI on Alibaba Cloud";
+const title = "金云智算 | 阿里云金牌伙伴·企业上云与 AI 算力服务";
 const description =
-  "Alibaba Cloud Gold Partner delivering enterprise cloud migration, managed infrastructure, Qwen AI platforms and dedicated GPU compute for 2500+ clients.";
+  "阿里云官方金牌合作伙伴，为 2500+ 企业客户提供上云迁移、云基础设施托管运维、通义千问 AI 平台与专属 GPU 算力服务。";
 
 export const Route = createFileRoute("/")({
   head: () => ({

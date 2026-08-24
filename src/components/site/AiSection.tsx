@@ -20,9 +20,9 @@ export function AiSection({ aiCards, gpuCards }: Props) {
       <div className="section-shell">
         <SectionHeading
           align="center"
-          eyebrow="AI & GPU Solutions"
-          title="Frontier model platforms, backed by dedicated GPU power"
-          description="From Qwen deployments inside your VPC to RDMA-connected GPU pods for generative video — we run the full AI stack."
+          eyebrow="AI 与 GPU 解决方案"
+          title="前沿大模型平台，配套专属 GPU 算力"
+          description="从在您专有网络内部署通义千问，到面向视频生成的 RDMA 互联 GPU 资源池，我们承担全栈 AI 落地。"
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -66,14 +66,14 @@ export function AiSection({ aiCards, gpuCards }: Props) {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl">
               <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.28em] text-secondary">
-                <Zap className="h-4 w-4" /> GPU Compute
+                <Zap className="h-4 w-4" /> GPU 算力
               </p>
               <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
-                Scenario-tuned GPU clusters, provisioned in days
+                按场景调优的 GPU 集群，数天内即可交付
               </h3>
             </div>
             <Button variant="hero" size="lg" asChild>
-              <a href="#contact">Reserve GPU capacity</a>
+              <a href="#contact">预约 GPU 资源</a>
             </Button>
           </div>
 

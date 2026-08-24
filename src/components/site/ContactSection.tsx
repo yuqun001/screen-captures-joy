@@ -26,28 +26,28 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!form.name.trim() || !form.contact.trim()) {
-      toast.error("Please provide your name and contact details.");
+      toast.error("请填写您的姓名与联系方式。");
       return;
     }
     setSubmitting(true);
     try {
       const result = await submitLead(form);
       if (result.ok) {
-        toast.success("Thanks — a cloud architect will reach out within one business day.");
+        toast.success("提交成功，云架构师将在 1 个工作日内与您联系。");
         setForm(EMPTY);
       }
     } catch {
-      toast.error("Something went wrong. Please try again or email us directly.");
+      toast.error("提交失败，请稍后重试或直接发送邮件联系我们。");
     } finally {
       setSubmitting(false);
     }
   }
 
   const details = [
-    { icon: MapPin, label: "Address", value: contactInfo.address },
-    { icon: Phone, label: "Phone", value: contactInfo.phone },
-    { icon: Mail, label: "Email", value: contactInfo.email },
-    { icon: Clock, label: "Availability", value: contactInfo.hours },
+    { icon: MapPin, label: "公司地址", value: contactInfo.address },
+    { icon: Phone, label: "咨询电话", value: contactInfo.phone },
+    { icon: Mail, label: "电子邮箱", value: contactInfo.email },
+    { icon: Clock, label: "服务时间", value: contactInfo.hours },
   ];
 
   return (
@@ -58,9 +58,9 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
       <div className="absolute right-0 top-10 -z-10 h-72 w-72 rounded-full bg-secondary/15 blur-[120px]" />
       <div className="section-shell">
         <SectionHeading
-          eyebrow="Contact Us"
-          title="Start with a free architecture review"
-          description="Tell us about your workloads. We respond with a migration path, reference architecture and delivery timeline."
+          eyebrow="联系我们"
+          title="从一次免费的架构诊断开始"
+          description="告诉我们您的业务与系统现状，我们将回复迁移路径、参考架构与交付排期。"
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1.1fr]">
@@ -84,16 +84,16 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
             <div className="flex items-center gap-5 rounded-2xl border border-border bg-background/50 p-5">
               <img
                 src={contactInfo.wechat_qr}
-                alt="WeChat QR code"
+                alt="微信二维码"
                 loading="lazy"
                 width={512}
                 height={512}
                 className="h-24 w-24 rounded-xl bg-foreground p-1"
               />
               <div>
-                <p className="font-display text-base font-semibold">Scan on WeChat</p>
+                <p className="font-display text-base font-semibold">微信扫码咨询</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Add our solutions team for instant answers on migration, quotas and GPU capacity.
+                  添加解决方案团队，即时解答迁移方案、配额与 GPU 资源问题。
                 </p>
               </div>
             </div>
@@ -103,45 +103,45 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="lead-name">
-                  Name <span className="text-primary">*</span>
+                  姓名 <span className="text-primary">*</span>
                 </Label>
                 <Input
                   id="lead-name"
                   value={form.name}
                   onChange={update("name")}
-                  placeholder="Your full name"
+                  placeholder="请输入您的姓名"
                   required
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="lead-contact">
-                  Contact Info <span className="text-primary">*</span>
+                  联系方式 <span className="text-primary">*</span>
                 </Label>
                 <Input
                   id="lead-contact"
                   value={form.contact}
                   onChange={update("contact")}
-                  placeholder="Phone or email"
+                  placeholder="手机号或邮箱"
                   required
                 />
               </div>
               <div className="space-y-2 sm:col-span-2">
-                <Label htmlFor="lead-company">Company</Label>
+                <Label htmlFor="lead-company">公司名称</Label>
                 <Input
                   id="lead-company"
                   value={form.company}
                   onChange={update("company")}
-                  placeholder="Company name (optional)"
+                  placeholder="公司名称（选填）"
                 />
               </div>
               <div className="space-y-2 sm:col-span-2">
-                <Label htmlFor="lead-requirements">Needs / Requirements</Label>
+                <Label htmlFor="lead-requirements">需求描述</Label>
                 <Textarea
                   id="lead-requirements"
                   value={form.requirements}
                   onChange={update("requirements")}
                   rows={5}
-                  placeholder="Current stack, workloads to migrate, AI or GPU requirements…"
+                  placeholder="当前技术栈、待迁移的业务系统、AI 或 GPU 需求……"
                 />
               </div>
             </div>
@@ -149,16 +149,16 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
             <Button type="submit" variant="hero" size="xl" className="mt-6 w-full" disabled={submitting}>
               {submitting ? (
                 <>
-                  <Loader2 className="h-4 w-4 animate-spin" /> Submitting…
+                  <Loader2 className="h-4 w-4 animate-spin" /> 提交中……
                 </>
               ) : (
                 <>
-                  Request my architecture review <Send className="h-4 w-4" />
+                  立即预约架构诊断 <Send className="h-4 w-4" />
                 </>
               )}
             </Button>
             <p className="mt-3 text-xs text-muted-foreground">
-              Your details stay with our solutions team. No spam, ever.
+              您的信息仅用于方案沟通，我们不会发送任何骚扰信息。
             </p>
           </form>
         </div>

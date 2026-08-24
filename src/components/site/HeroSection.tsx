@@ -51,10 +51,10 @@ export function HeroSection({ settings }: { settings: SiteSettings }) {
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-secondary" /> Compliance-ready architecture
+              <ShieldCheck className="h-4 w-4 text-secondary" /> 等保合规架构设计
             </span>
             <span className="inline-flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-primary" /> Qwen & GPU cluster enablement
+              <Sparkles className="h-4 w-4 text-primary" /> 通义千问与 GPU 集群落地
             </span>
           </div>
 
