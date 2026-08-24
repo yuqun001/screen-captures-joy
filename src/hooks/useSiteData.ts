@@ -134,6 +134,34 @@ const settings: SiteSettings = {
     { value: "28", label: "全球部署地域" },
     { value: "99.995%", label: "可用性保障" },
   ],
+  // 轮播 banner：后续接入上传功能时，只需替换这个数组的来源
+  banners: [
+    {
+      id: "banner-1",
+      image_url: heroBg,
+      alt: "云数据中心与全球网络示意",
+    },
+    {
+      id: "banner-2",
+      image_url: banner2,
+      alt: "云网络高速链路示意",
+      eyebrow: "架构咨询 · 平滑割接 · 成本优化",
+      title: "核心系统迁云",
+      highlight: "零停机割接",
+      subtitle:
+        "资深云架构师全程护航，从评估、演练到割接上线，保障业务连续性与成本可控。",
+    },
+    {
+      id: "banner-3",
+      image_url: banner3,
+      alt: "GPU 集群与 AI 算力示意",
+      eyebrow: "通义千问 · PAI · 专属 GPU",
+      title: "AI 算力交付",
+      highlight: "数天上线",
+      subtitle:
+        "RDMA 高速互联的专属 GPU 资源池，配套并行文件存储与推理服务，快速跑通业务场景。",
+    },
+  ],
 };
 
 const nav: NavItem[] = [
