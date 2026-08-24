@@ -201,3 +201,69 @@
   max-width: 80rem;
   padding-inline: 1.5rem;
 }
+
+/* ===== 动效关键帧 ===== */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(4px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.85); opacity: 0.55; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-120%); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translateY(320%); opacity: 0; }
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer-x {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+@utility animate-rise-in {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+@utility animate-pulse-ring {
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
+@utility animate-scan-line {
+  animation: scan-line 3.4s ease-in-out infinite;
+}
+
+@utility animate-orbit-spin {
+  animation: orbit-spin 14s linear infinite;
+}
+
+@utility animate-shimmer-x {
+  animation: shimmer-x 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
