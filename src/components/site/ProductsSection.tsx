@@ -53,7 +53,7 @@ export function ProductsSection({ products, categories }: Props) {
                   "rounded-full border px-4 py-2 text-sm transition-all duration-200",
                   active === cat.id
                     ? "border-transparent bg-gradient-primary font-semibold text-primary-foreground shadow-glow"
-                    : "border-border bg-surface/50 text-muted-foreground hover:border-border-strong hover:text-foreground",
+                    : "border-border bg-surface text-muted-foreground hover:border-border-strong hover:text-foreground",
                 )}
               >
                 {cat.label}

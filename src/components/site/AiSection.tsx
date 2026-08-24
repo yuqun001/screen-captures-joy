@@ -15,7 +15,7 @@ export function AiSection({ aiCards, gpuCards }: Props) {
   return (
     <section id="ai" className="relative isolate overflow-hidden border-t border-border py-24 lg:py-32">
       <div className="grid-backdrop absolute inset-0 -z-10 opacity-30 [mask-image:radial-gradient(80%_60%_at_50%_0%,black,transparent)]" />
-      <div className="absolute left-1/2 top-0 -z-10 h-72 w-[46rem] -translate-x-1/2 rounded-full bg-primary/18 blur-[120px]" />
+      <div className="absolute left-1/2 top-0 -z-10 h-72 w-[46rem] -translate-x-1/2 rounded-full bg-primary/8 blur-[120px]" />
 
       <div className="section-shell">
         <SectionHeading
@@ -62,7 +62,7 @@ export function AiSection({ aiCards, gpuCards }: Props) {
           ))}
         </div>
 
-        <div className="mt-20 rounded-3xl border border-border bg-surface/50 p-6 backdrop-blur-md lg:p-10">
+        <div className="mt-20 rounded-3xl border border-border bg-surface p-6 backdrop-blur-md lg:p-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl">
               <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.28em] text-secondary">
@@ -84,11 +84,11 @@ export function AiSection({ aiCards, gpuCards }: Props) {
                 <article
                   key={card.id}
                   style={{ animationDelay: `${i * 120}ms` }}
-                  className="group animate-rise-in relative isolate overflow-hidden rounded-2xl border border-border bg-background/60 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow"
+                  className="group animate-rise-in relative isolate overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow"
                 >
                   {/* 动态光斑与网格背景 */}
-                  <div className="animate-float-soft absolute -right-12 -top-12 -z-10 h-32 w-32 rounded-full bg-primary/20 blur-3xl" />
-                  <div className="animate-float-soft absolute -bottom-14 -left-10 -z-10 h-28 w-28 rounded-full bg-secondary/15 blur-3xl [animation-delay:1.8s]" />
+                  <div className="animate-float-soft absolute -right-12 -top-12 -z-10 h-32 w-32 rounded-full bg-primary/12 blur-3xl" />
+                  <div className="animate-float-soft absolute -bottom-14 -left-10 -z-10 h-28 w-28 rounded-full bg-secondary/10 blur-3xl [animation-delay:1.8s]" />
                   <div className="grid-backdrop absolute inset-0 -z-10 opacity-[0.12] transition-opacity duration-500 group-hover:opacity-25" />
                   {/* 扫描光线 */}
                   <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-16 bg-gradient-to-b from-secondary/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:animate-scan-line group-hover:opacity-100" />
