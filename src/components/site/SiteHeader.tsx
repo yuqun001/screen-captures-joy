@@ -43,13 +43,13 @@ export function SiteHeader({ settings, nav }: Props) {
             <span className="font-display text-base font-semibold tracking-tight">
               {settings.brand}
             </span>
-            <span className="text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
-              阿里云金牌伙伴
+            <span className="mt-1 text-[0.68rem] tracking-[0.18em] text-muted-foreground">
+              阿里云授权合作伙伴
             </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex lg:flex-1 lg:justify-center">
           {nav.map((item) => (
             <a
               key={item.href}
