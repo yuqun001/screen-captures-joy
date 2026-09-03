@@ -24,8 +24,10 @@ export function SiteHeader({ settings, nav }: Props) {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled ? "border-b border-border bg-background/85 backdrop-blur-xl" : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border bg-background/90 backdrop-blur-xl"
+          : "border-transparent bg-background/70 backdrop-blur-md",
       )}
     >
       <div className="section-shell flex h-18 items-center justify-between gap-6 py-4">
