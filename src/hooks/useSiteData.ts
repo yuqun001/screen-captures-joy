@@ -576,7 +576,7 @@ const advantages: Advantage[] = [
     title: "定制方案",
     description: "按业务场景量身设计架构与选型，不做通用堆料。",
   },
-};
+];
 
 const news: NewsItem[] = [
   {
@@ -613,6 +613,12 @@ export function useSiteData() {
     () => ({
       settings,
       nav,
+      hero,
+      promo,
+      statsBand,
+      capabilities,
+      advantages,
+      news,
       categories: CATEGORY_LABELS,
       products,
       aiCards,
