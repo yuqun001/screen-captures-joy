@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Clock, Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
 
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -47,7 +47,6 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
     { icon: MapPin, label: "公司地址", value: contactInfo.address },
     { icon: Phone, label: "咨询电话", value: contactInfo.phone },
     { icon: Mail, label: "电子邮箱", value: contactInfo.email },
-    { icon: Clock, label: "服务时间", value: contactInfo.hours },
   ];
 
   return (
@@ -58,6 +57,7 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
       <div className="absolute right-0 top-10 -z-10 h-72 w-72 rounded-full bg-secondary/15 blur-[120px]" />
       <div className="section-shell">
         <SectionHeading
+          align="center"
           eyebrow="联系我们"
           title="从一次免费的架构诊断开始"
           description="告诉我们您的业务与系统现状，我们将回复迁移路径、参考架构与交付排期。"
@@ -68,11 +68,11 @@ export function ContactSection({ contactInfo, submitLead }: Props) {
             <ul className="space-y-5">
               {details.map((item) => (
                 <li key={item.label} className="flex gap-4">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border-strong bg-accent text-primary">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent text-primary">
                     <item.icon className="h-4.5 w-4.5" />
                   </span>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="text-xs tracking-[0.14em] text-muted-foreground">
                       {item.label}
                     </p>
                     <p className="mt-1 text-sm text-foreground">{item.value}</p>

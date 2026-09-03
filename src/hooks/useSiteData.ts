@@ -51,6 +51,49 @@ export interface NavItem {
   href: string;
 }
 
+export interface HeroContent {
+  eyebrow: string;
+  title_line1: string;
+  title_line2: string;
+  subtitle: string;
+  primary_cta: string;
+  secondary_cta: string;
+  stats: { value: string; label: string }[];
+  assurances: string[];
+}
+
+export interface PromoCard {
+  title: string;
+  badge: string;
+  cta: string;
+  items: { name: string; description: string; original: string; price: string }[];
+}
+
+export interface Capability {
+  id: string;
+  icon: "consult" | "security" | "ai" | "ops";
+  title: string;
+  description: string;
+  tags: string[];
+}
+
+export interface Advantage {
+  id: string;
+  icon: "discount" | "certified" | "support" | "custom";
+  title: string;
+  description: string;
+}
+
+export interface NewsItem {
+  id: string;
+  kicker: string;
+  date: string;
+  title: string;
+  description: string;
+  image_url: string;
+  cta: string;
+}
+
 export interface Product {
   id: string;
   category: ProductCategory;
@@ -435,6 +478,129 @@ const contactInfo: ContactInfo = {
   wechat_qr: wechatQr,
 };
 
+const hero: HeroContent = {
+  eyebrow: "阿里云代理商 · 企业上云一站式服务",
+  title_line1: "企业上云",
+  title_line2: "首选阿里云",
+  subtitle: "官方授权合作伙伴，提供云产品专属折扣、架构规划与 7×24 小时技术支持。",
+  primary_cta: "查看优惠产品",
+  secondary_cta: "免费咨询",
+  stats: [
+    { value: "3折", label: "最低折扣" },
+    { value: "500+", label: "服务企业" },
+    { value: "24h", label: "技术支持" },
+  ],
+  assurances: ["官方授权", "7×24 服务", "专属折扣"],
+};
+
+const promo: PromoCard = {
+  title: "代理商专属优惠",
+  badge: "3折 开抢",
+  cta: "立即获取专属报价",
+  items: [
+    {
+      name: "云服务器 ECS",
+      description: "2核4G · 3年付 · 通用型",
+      original: "¥5,880",
+      price: "¥1,764",
+    },
+    {
+      name: "云数据库 RDS",
+      description: "MySQL 高可用版 · 1年付",
+      original: "¥9,600",
+      price: "¥3,840",
+    },
+  ],
+};
+
+const statsBand: { value: string; label: string }[] = [
+  { value: "3折", label: "云专属折扣 · 低至" },
+  { value: "10年+", label: "深耕云计算" },
+  { value: "500家+", label: "企业客户" },
+  { value: "7×24小时", label: "技术支持" },
+];
+
+const capabilities: Capability[] = [
+  {
+    id: "consult",
+    icon: "consult",
+    title: "云咨询与集成",
+    description: "从现状评估到目标架构设计，制定分阶段迁移路径并完成平滑割接上线。",
+    tags: ["云咨询", "云迁移", "架构设计"],
+  },
+  {
+    id: "security",
+    icon: "security",
+    title: "安全合规服务",
+    description: "覆盖等保测评辅导、安全基线加固与边缘防护，帮助业务稳定通过合规审计。",
+    tags: ["等保合规", "安全审计", "WAF防护"],
+  },
+  {
+    id: "ai",
+    icon: "ai",
+    title: "数据 + AI 赋能",
+    description: "构建数据平台与大模型应用链路，把企业知识沉淀为可用的智能业务能力。",
+    tags: ["大模型", "数据平台", "AI应用"],
+  },
+  {
+    id: "ops",
+    icon: "ops",
+    title: "运维与托管服务",
+    description: "专业团队值守，提供全天候监控告警、故障响应与成本优化的托管运维。",
+    tags: ["7×24运维", "鹰视监控", "MSP"],
+  },
+];
+
+const advantages: Advantage[] = [
+  {
+    id: "discount",
+    icon: "discount",
+    title: "专属折扣",
+    description: "代理商渠道价格，云产品长期享受专属优惠。",
+  },
+  {
+    id: "certified",
+    icon: "certified",
+    title: "官方授权",
+    description: "阿里云官方授权合作伙伴，资质可查可信。",
+  },
+  {
+    id: "support",
+    icon: "support",
+    title: "技术支持",
+    description: "认证架构师团队 7×24 小时在线响应处理。",
+  },
+  {
+    id: "custom",
+    icon: "custom",
+    title: "定制方案",
+    description: "按业务场景量身设计架构与选型，不做通用堆料。",
+  },
+];
+
+const news: NewsItem[] = [
+  {
+    id: "retail",
+    kicker: "客户案例",
+    date: "2026-03-18",
+    title: "跨境零售平台重构云架构，平稳承接大促洪峰",
+    description:
+      "将单体电商系统迁移至容器服务，结合 PolarDB 与 OSS 分层存储，在全球大促期间稳定支撑 40 倍流量峰值，核心接口时延下降 62%。",
+    image_url: caseRetail,
+    cta: "查看完整案例",
+  },
+  {
+    id: "media",
+    kicker: "行业动态",
+    date: "2026-01-09",
+    title: "传媒集团基于专属 GPU 上线 AI 内容生产线",
+    description:
+      "搭建专属 GPU 资源池与大模型剧本链路，帮助客户从概念验证走到 120 集内容上线，制作成本降低 55%，交付周期压缩至 9 天。",
+    image_url: caseMedia,
+    cta: "查看完整案例",
+  },
+];
+
 export function useSiteData() {
   const submitLead = useCallback(async (payload: LeadPayload) => {
     // 模拟异步提交 —— 可替换为 fetch("/api/leads", { method: "POST", ... })
@@ -447,6 +613,12 @@ export function useSiteData() {
     () => ({
       settings,
       nav,
+      hero,
+      promo,
+      statsBand,
+      capabilities,
+      advantages,
+      news,
       categories: CATEGORY_LABELS,
       products,
       aiCards,

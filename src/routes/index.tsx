@@ -3,9 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useSiteData } from "@/hooks/useSiteData";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { HeroSection } from "@/components/site/HeroSection";
-import { ProductsSection } from "@/components/site/ProductsSection";
+import { StatsBand } from "@/components/site/StatsBand";
+import { CapabilitiesSection } from "@/components/site/CapabilitiesSection";
 import { AiSection } from "@/components/site/AiSection";
-import { CasesSection } from "@/components/site/CasesSection";
+import { WhyUsSection } from "@/components/site/WhyUsSection";
+import { NewsSection } from "@/components/site/NewsSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 

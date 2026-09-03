@@ -24,8 +24,10 @@ export function SiteHeader({ settings, nav }: Props) {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled ? "border-b border-border bg-background/85 backdrop-blur-xl" : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border bg-background/90 backdrop-blur-xl"
+          : "border-transparent bg-background/70 backdrop-blur-md",
       )}
     >
       <div className="section-shell flex h-18 items-center justify-between gap-6 py-4">
@@ -41,13 +43,13 @@ export function SiteHeader({ settings, nav }: Props) {
             <span className="font-display text-base font-semibold tracking-tight">
               {settings.brand}
             </span>
-            <span className="text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
-              阿里云金牌伙伴
+            <span className="mt-1 text-[0.68rem] tracking-[0.18em] text-muted-foreground">
+              阿里云授权合作伙伴
             </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex lg:flex-1 lg:justify-center">
           {nav.map((item) => (
             <a
               key={item.href}
