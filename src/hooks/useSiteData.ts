@@ -51,6 +51,49 @@ export interface NavItem {
   href: string;
 }
 
+export interface HeroContent {
+  eyebrow: string;
+  title_line1: string;
+  title_line2: string;
+  subtitle: string;
+  primary_cta: string;
+  secondary_cta: string;
+  stats: { value: string; label: string }[];
+  assurances: string[];
+}
+
+export interface PromoCard {
+  title: string;
+  badge: string;
+  cta: string;
+  items: { name: string; description: string; original: string; price: string }[];
+}
+
+export interface Capability {
+  id: string;
+  icon: "consult" | "security" | "ai" | "ops";
+  title: string;
+  description: string;
+  tags: string[];
+}
+
+export interface Advantage {
+  id: string;
+  icon: "discount" | "certified" | "support" | "custom";
+  title: string;
+  description: string;
+}
+
+export interface NewsItem {
+  id: string;
+  kicker: string;
+  date: string;
+  title: string;
+  description: string;
+  image_url: string;
+  cta: string;
+}
+
 export interface Product {
   id: string;
   category: ProductCategory;
