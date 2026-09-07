@@ -163,7 +163,7 @@ const settings: SiteSettings = {
   brand_en: "金云智算 · 云服务",
   logo_url: null as unknown as string,
   hero_bg_url: heroBg,
-  partner_label: "阿里云官方金牌合作伙伴",
+  partner_label: "阿里云官方授权合作伙伴",
   hero_eyebrow: "上云迁移 · 云基础设施 · AI 算力",
   hero_title: "企业上云",
   hero_highlight: "首选伙伴",
@@ -209,9 +209,9 @@ const settings: SiteSettings = {
 
 const nav: NavItem[] = [
   { label: "首页", href: "#home" },
-  { label: "云产品", href: "#products" },
+  { label: "云产品", href: "#services" },
   { label: "AI 解决方案", href: "#ai" },
-  { label: "客户案例", href: "#cases" },
+  { label: "客户案例", href: "#news" },
   { label: "联系我们", href: "#contact" },
 ];
 

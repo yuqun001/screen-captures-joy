@@ -30,17 +30,31 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const { settings, nav, categories, products, aiCards, gpuCards, cases, contactInfo, submitLead } =
-    useSiteData();
+  const {
+    settings,
+    nav,
+    hero,
+    promo,
+    statsBand,
+    capabilities,
+    advantages,
+    news,
+    aiCards,
+    gpuCards,
+    contactInfo,
+    submitLead,
+  } = useSiteData();
 
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader settings={settings} nav={nav} />
       <main>
-        <HeroSection settings={settings} />
-        <ProductsSection products={products} categories={categories} />
+        <HeroSection settings={settings} hero={hero} promo={promo} />
+        <StatsBand stats={statsBand} />
+        <CapabilitiesSection capabilities={capabilities} />
         <AiSection aiCards={aiCards} gpuCards={gpuCards} />
-        <CasesSection cases={cases} />
+        <WhyUsSection advantages={advantages} brand={settings.brand} />
+        <NewsSection news={news} />
         <ContactSection contactInfo={contactInfo} submitLead={submitLead} />
       </main>
       <SiteFooter settings={settings} nav={nav} contactInfo={contactInfo} />
